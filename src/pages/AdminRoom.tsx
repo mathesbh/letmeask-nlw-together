@@ -10,6 +10,7 @@ import { Question } from '../components/Question';
 import { useRoom } from '../hooks/useRoom';
 import { database } from '../services/firebase';
 import { useHistory } from 'react-router-dom';
+import { EmptyQuestions } from '../components/EmptyQuestions';
 
 
 type RoomParams = {
@@ -65,6 +66,7 @@ export function AdminRoom(){;
         </div>
         
         <div className="question-list">
+          {questions.length === 0 && <EmptyQuestions />}
           {questions.map(question => {
             return <Question key={question.id} content={question.content} author={question.author} isAnswered={question.isAnswered} isHighlighted={question.isHighlighted} >
               {!question.isAnswered && (
