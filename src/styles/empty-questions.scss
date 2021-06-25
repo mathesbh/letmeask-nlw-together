@@ -1,0 +1,32 @@
+.empty-questions{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15%;
+  gap: 0.9em;
+
+  img{
+    width: 150px;
+  }
+
+  footer{
+    width: 285px;
+
+    strong{
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: #29292e;
+      margin-bottom: 1.5em;
+    }
+  
+    p{
+      margin-top: 0.6em;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      color: #737380;
+      text-align: center;
+      line-height: 1.5em;
+    }
+  }
+}
