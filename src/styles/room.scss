@@ -26,7 +26,7 @@
   }
 
   main {
-    max-width: 800px;
+    max-width: 80%;
     margin: 0 auto;
 
     .room-title{
@@ -107,6 +107,62 @@
 
     .question-list{
       margin-top: 32px;
+    }
+  }
+}
+
+@media screen and (max-width: 630px) {
+  #page-room{
+    header{
+      padding: 3% 1%;
+      .content{
+        flex-direction: column;
+
+        > img{
+          margin-bottom: 2%;
+        }
+      }
+    }
+
+    main{
+      .room-title{
+        h1{
+          margin-left: 10%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #page-room{
+    header{
+      .content{
+        .room-code{
+          span{
+            font-size: small;
+            width: 180px;
+            display: flex;
+            padding: 0;
+          }
+        }
+        .button{
+          font-size: small;
+          padding: 0.2em;
+        }
+      }
+    }
+  }
+
+  main{
+    form{
+      .form-footer{
+        .button{
+          padding: 0.5%;
+          height: 35px;
+          font-size: small;
+        }
+      }
     }
   }
 }
