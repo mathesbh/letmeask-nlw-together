@@ -9,6 +9,7 @@ import '../styles/room.scss'
 import { Question } from '../components/Question';
 import { useRoom } from '../hooks/useRoom';
 import { Header } from '../components/Header';
+import { EmptyQuestions } from '../components/EmptyQuestions';
 
 
 type RoomParams = {
@@ -86,6 +87,7 @@ export function Room(){;
         </form>
         
         <div className="question-list">
+        {questions.length === 0 && <EmptyQuestions text="Faça seu login e seja a primeira pessoa a fazer uma pergunta!"/>}
           {questions.map(question => {
             return <Question key={question.id} content={question.content} author={question.author} isAnswered={question.isAnswered} isHighlighted={question.isHighlighted}>
               { !question.isAnswered && (

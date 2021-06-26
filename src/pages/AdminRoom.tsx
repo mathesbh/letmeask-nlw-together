@@ -61,7 +61,7 @@ export function AdminRoom(){;
         </div>
         
         <div className="question-list">
-          {questions.length === 0 && <EmptyQuestions />}
+          {questions.length === 0 && <EmptyQuestions text="Envie o código desta sala para seus amigos e comece a responder perguntas!"/>}
           {questions.map(question => {
             return <Question key={question.id} content={question.content} author={question.author} isAnswered={question.isAnswered} isHighlighted={question.isHighlighted} >
               {!question.isAnswered && (
