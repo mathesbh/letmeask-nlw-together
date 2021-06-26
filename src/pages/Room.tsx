@@ -3,12 +3,12 @@ import { useParams } from 'react-router';
 import { useAuth } from '../hooks/useAuth';
 import { database } from '../services/firebase';
 
-import logoImg from '../assets/images/logo.svg';
 import { Button } from '../components/Button';
 import { RoomCode } from '../components/RoomCode';
 import '../styles/room.scss'
 import { Question } from '../components/Question';
 import { useRoom } from '../hooks/useRoom';
+import { Header } from '../components/Header';
 
 
 type RoomParams = {
@@ -59,12 +59,9 @@ export function Room(){;
 
   return(
     <div id="page-room">
-      <header>
-        <div className="content">
-          <img src={logoImg} alt="Letmeask" />
-          <RoomCode code={params.id}/>
-        </div>
-      </header>
+      <Header>
+        <RoomCode code={params.id}/>
+      </Header>
       <main>
         <div className="room-title">
           <h1>Sala {title}</h1>

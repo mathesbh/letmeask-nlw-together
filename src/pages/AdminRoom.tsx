@@ -1,5 +1,4 @@
 import { useParams } from 'react-router';
-import logoImg from '../assets/images/logo.svg';
 import deleteImg from '../assets/images/delete.svg';
 import checkImg from '../assets/images/check.svg';
 import answerImg from '../assets/images/answer.svg';
@@ -11,6 +10,7 @@ import { useRoom } from '../hooks/useRoom';
 import { database } from '../services/firebase';
 import { useHistory } from 'react-router-dom';
 import { EmptyQuestions } from '../components/EmptyQuestions';
+import { Header } from '../components/Header';
 
 
 type RoomParams = {
@@ -50,15 +50,10 @@ export function AdminRoom(){;
 
   return(
     <div id="page-room">
-      <header>
-        <div className="content">
-          <img src={logoImg} alt="Letmeask" />
-          <div>
-            <RoomCode code={params.id}/>
-            <Button isOutlined onClick={handleEndRoom}>Encerrar sala</Button>
-          </div>
-        </div>
-      </header>
+      <Header>
+        <RoomCode code={params.id}/>
+        <Button isOutlined onClick={handleEndRoom}>Encerrar sala</Button>
+      </Header>
       <main>
         <div className="room-title">
           <h1>Sala {title}</h1>
